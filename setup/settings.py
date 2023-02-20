@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path, os
+import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework'
 ]
+
+sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
